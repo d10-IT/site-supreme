@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website by Design builds websites, booking systems, and client portals for growing South African businesses. Part of the D10 Solutions Group.">
+<title>Website by Design | Beautiful. Functional. Built for Business.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#12151A',
+          'ink-soft': '#1B2130',
+          paper: '#F5F4F0',
+          slate: '#2B2E33',
+          mist: '#DEDCD3',
+          blueprint: '#3252E3',
+          'blueprint-light': '#8CA0FF',
+          signal: '#F0A202',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(140, 160, 255, 0.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(140, 160, 255, 0.14) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .crosshair {
+    position: relative;
+  }
+  .crosshair::before,
+  .crosshair::after {
+    content: '';
+    position: absolute;
+    background: rgba(140, 160, 255, 0.6);
+  }
+  .crosshair::before { width: 14px; height: 1px; top: 50%; left: -7px; }
+  .crosshair::after { width: 1px; height: 14px; left: 50%; top: -7px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+
+<body class="bg-paper text-slate font-body antialiased">
+
+  <!-- header -->
+  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-mist">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+
+      <a href="/" class="font-display font-semibold text-lg tracking-tight text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-blueprint rounded-sm">
+        Website<span class="text-blueprint">·</span>by Design
+      </a>
+
+      <nav aria-label="main navigation" class="hidden md:flex items-center gap-9">
+        <a href="#services" class="text-sm text-slate/80 hover:text-ink transition-colors">Services</a>
+        <a href="#work" class="text-sm text-slate/80 hover:text-ink transition-colors">Our Work</a>
+        <a href="#process" class="text-sm text-slate/80 hover:text-ink transition-colors">Process</a>
+        <a href="#contact" class="text-sm text-slate/80 hover:text-ink transition-colors">Contact</a>
+        <a href="#contact"
+           class="inline-flex items-center rounded-full bg-ink text-paper text-sm font-medium px-5 py-2.5 hover:bg-blueprint transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blueprint">
+          Start a project
+        </a>
+      </nav>
+
+      <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden p-2 -mr-2 text-ink">
+        <svg id="icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+        <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="hidden"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-mist bg-paper">
+      <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col gap-4">
+        <a href="#services" class="text-sm text-slate/80">Services</a>
+        <a href="#work" class="text-sm text-slate/80">Our Work</a>
+        <a href="#process" class="text-sm text-slate/80">Process</a>
+        <a href="#contact" class="inline-flex justify-center rounded-full bg-ink text-paper text-sm font-medium px-5 py-2.5">Start a project</a>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="relative overflow-hidden bg-ink text-paper">
+      <div class="absolute inset-0 blueprint-grid opacity-60" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/60 to-ink" aria-hidden="true"></div>
+
+      <!-- corner annotation -->
+      <div class="hidden sm:block absolute top-8 right-8 font-mono text-[11px] text-blueprint-light/70 tracking-wide text-right" aria-hidden="true">
+        <p>33.9249°S&nbsp; 18.4241°E</p>
+        <p>CAPE TOWN, ZA</p>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-6 pt-24 pb-32 md:pt-32 md:pb-40">
+        <p class="font-mono text-xs tracking-[0.2em] text-blueprint-light uppercase mb-6 crosshair inline-block ml-2">
+          Beautiful. Functional. Built for business.
+        </p>
+
+        <h1 class="font-display font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.08] max-w-3xl text-paper">
+          Websites and web apps that run your business — not just represent it.
+        </h1>
+
+        <p class="mt-6 max-w-xl text-base md:text-lg text-paper/70 leading-relaxed">
+          We design and build the site, the booking calendar, the client portal — whatever your
+          business needs to run online — and we're still around to maintain it after launch.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="#contact"
+             class="inline-flex items-center justify-center rounded-full bg-blueprint text-paper text-sm font-medium px-7 py-3.5 hover:bg-blueprint-light hover:text-ink transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blueprint-light">
+            Start your project
+          </a>
+          <a href="#work"
+             class="inline-flex items-center justify-center rounded-full border border-paper/25 text-paper text-sm font-medium px-7 py-3.5 hover:border-paper/60 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper/60">
+            See our work
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ WHY / CONCRETE VALUE ============ -->
+    <section class="max-w-6xl mx-auto px-6 py-24">
+      <div class="max-w-2xl">
+        <p class="font-mono text-xs tracking-[0.2em] text-blueprint uppercase mb-4">Why us</p>
+        <h2 class="font-display font-semibold text-3xl md:text-4xl text-ink leading-tight">
+          A website is easy to buy. A working one is rare.
+        </h2>
+        <p class="mt-4 text-slate/75 leading-relaxed">
+          We keep every project small enough that one person actually knows your whole site —
+          no handoffs, no support tickets vanishing into a queue.
+        </p>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-mist rounded-2xl overflow-hidden">
+        <div class="bg-paper p-7">
+          <p class="font-mono text-xs text-blueprint mb-3">01</p>
+          <h3 class="font-display font-semibold text-ink mb-2">Live in weeks</h3>
+          <p class="text-sm text-slate/70 leading-relaxed">Most business sites launch in 2–4 weeks, not months of back-and-forth.</p>
+        </div>
+        <div class="bg-paper p-7">
+          <p class="font-mono text-xs text-blueprint mb-3">02</p>
+          <h3 class="font-display font-semibold text-ink mb-2">One point of contact</h3>
+          <p class="text-sm text-slate/70 leading-relaxed">You deal directly with the person who builds and maintains your site.</p>
+        </div>
+        <div class="bg-paper p-7">
+          <p class="font-mono text-xs text-blueprint mb-3">03</p>
+          <h3 class="font-display font-semibold text-ink mb-2">Priced for SMBs</h3>
+          <p class="text-sm text-slate/70 leading-relaxed">Scoped for small and growing businesses, not enterprise budgets.</p>
+        </div>
+        <div class="bg-paper p-7">
+          <p class="font-mono text-xs text-blueprint mb-3">04</p>
+          <h3 class="font-display font-semibold text-ink mb-2">Room to grow</h3>
+          <p class="text-sm text-slate/70 leading-relaxed">Start with a site, add bookings, payments, or a portal when you're ready.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="bg-ink-soft text-paper">
+      <div class="max-w-6xl mx-auto px-6 py-24">
+        <div class="max-w-2xl mb-14">
+          <p class="font-mono text-xs tracking-[0.2em] text-blueprint-light uppercase mb-4">What we build</p>
+          <h2 class="font-display font-semibold text-3xl md:text-4xl leading-tight">
+            Start with a website. Bring us back for what comes next.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="rounded-2xl border border-paper/10 p-7 hover:border-blueprint-light/50 transition-colors">
+            <h3 class="font-display font-semibold text-lg mb-2">Business Websites</h3>
+            <p class="text-sm text-paper/65 leading-relaxed">A site that explains what you do and makes it easy to get in touch — built to be edited without calling us every time.</p>
+          </article>
+          <article class="rounded-2xl border border-paper/10 p-7 hover:border-blueprint-light/50 transition-colors">
+            <h3 class="font-display font-semibold text-lg mb-2">Landing Pages</h3>
+            <p class="text-sm text-paper/65 leading-relaxed">One page, one goal — for a campaign, a launch, or a service you want to promote on its own.</p>
+          </article>
+          <article class="rounded-2xl border border-paper/10 p-7 hover:border-blueprint-light/50 transition-colors">
+            <h3 class="font-display font-semibold text-lg mb-2">Online Stores</h3>
+            <p class="text-sm text-paper/65 leading-relaxed">Sell online with a store that handles stock, payments, and orders without needing a developer to run it.</p>
+          </article>
+          <article class="rounded-2xl border border-paper/10 p-7 hover:border-blueprint-light/50 transition-colors">
+            <h3 class="font-display font-semibold text-lg mb-2">Booking Systems</h3>
+            <p class="text-sm text-paper/65 leading-relaxed">Let customers book appointments or services themselves, with a calendar you control from the back end.</p>
+          </article>
+          <article class="rounded-2xl border border-paper/10 p-7 hover:border-blueprint-light/50 transition-colors">
+            <h3 class="font-display font-semibold text-lg mb-2">Client Portals</h3>
+            <p class="text-sm text-paper/65 leading-relaxed">A private, secure login where your customers can see documents, status, or account details.</p>
+          </article>
+          <article class="rounded-2xl border border-paper/10 p-7 hover:border-blueprint-light/50 transition-colors">
+            <h3 class="font-display font-semibold text-lg mb-2">Care Plans</h3>
+            <p class="text-sm text-paper/65 leading-relaxed">Hosting, security updates, small edits, and uptime monitoring — so the site keeps working after launch.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ OUR WORK ============ -->
+    <section id="work" class="max-w-6xl mx-auto px-6 py-24">
+      <div class="max-w-2xl mb-14">
+        <p class="font-mono text-xs tracking-[0.2em] text-blueprint uppercase mb-4">Selected work</p>
+        <h2 class="font-display font-semibold text-3xl md:text-4xl text-ink leading-tight">
+          Recent projects.
+        </h2>
+      </div>
+
+      <!-- placeholder project cards — swap for real case studies as they land -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-mist overflow-hidden">
+          <div class="aspect-[4/3] bg-mist/60 flex items-center justify-center">
+            <span class="font-mono text-xs text-slate/40">Case study coming soon</span>
+          </div>
+          <div class="p-5">
+            <p class="font-mono text-xs text-blueprint mb-1">Hospitality</p>
+            <h3 class="font-display font-semibold text-ink">Astros Lodge</h3>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-mist overflow-hidden">
+          <div class="aspect-[4/3] bg-mist/60 flex items-center justify-center">
+            <span class="font-mono text-xs text-slate/40">Case study coming soon</span>
+          </div>
+          <div class="p-5">
+            <p class="font-mono text-xs text-blueprint mb-1">Coming soon</p>
+            <h3 class="font-display font-semibold text-ink">Your business here</h3>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-mist overflow-hidden">
+          <div class="aspect-[4/3] bg-mist/60 flex items-center justify-center">
+            <span class="font-mono text-xs text-slate/40">Case study coming soon</span>
+          </div>
+          <div class="p-5">
+            <p class="font-mono text-xs text-blueprint mb-1">Coming soon</p>
+            <h3 class="font-display font-semibold text-ink">Your business here</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process" class="bg-paper border-t border-mist">
+      <div class="max-w-6xl mx-auto px-6 py-24">
+        <div class="max-w-2xl mb-14">
+          <p class="font-mono text-xs tracking-[0.2em] text-blueprint uppercase mb-4">How we work</p>
+          <h2 class="font-display font-semibold text-3xl md:text-4xl text-ink leading-tight">
+            Five stages, start to finish.
+          </h2>
+        </div>
+
+        <ol class="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <li>
+            <p class="font-mono text-xs text-blueprint mb-3">§01</p>
+            <h3 class="font-display font-semibold text-ink mb-2">Discover</h3>
+            <p class="text-sm text-slate/70 leading-relaxed">We learn your business, your customers, and what the site actually needs to do.</p>
+          </li>
+          <li>
+            <p class="font-mono text-xs text-blueprint mb-3">§02</p>
+            <h3 class="font-display font-semibold text-ink mb-2">Design</h3>
+            <p class="text-sm text-slate/70 leading-relaxed">We map the structure and visual direction before writing a line of code.</p>
+          </li>
+          <li>
+            <p class="font-mono text-xs text-blueprint mb-3">§03</p>
+            <h3 class="font-display font-semibold text-ink mb-2">Build</h3>
+            <p class="text-sm text-slate/70 leading-relaxed">We develop it on modern, maintainable technology — fast by default.</p>
+          </li>
+          <li>
+            <p class="font-mono text-xs text-blueprint mb-3">§04</p>
+            <h3 class="font-display font-semibold text-ink mb-2">Launch</h3>
+            <p class="text-sm text-slate/70 leading-relaxed">We test across devices, then deploy to a live, secure environment.</p>
+          </li>
+          <li>
+            <p class="font-mono text-xs text-blueprint mb-3">§05</p>
+            <h3 class="font-display font-semibold text-ink mb-2">Grow</h3>
+            <p class="text-sm text-slate/70 leading-relaxed">We stay on to maintain, support, and extend the site as your business changes.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============ TECHNOLOGY ============ -->
+    <section class="border-t border-mist">
+      <div class="max-w-6xl mx-auto px-6 py-20">
+        <p class="font-mono text-xs tracking-[0.2em] text-blueprint uppercase mb-4">Built with intention</p>
+        <h2 class="font-display font-semibold text-2xl md:text-3xl text-ink leading-tight mb-10 max-w-xl">
+          One modern stack, used consistently across every project.
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <span class="font-mono text-xs px-3.5 py-2 rounded-full border border-mist text-slate/70">Next.js</span>
+          <span class="font-mono text-xs px-3.5 py-2 rounded-full border border-mist text-slate/70">TypeScript</span>
+          <span class="font-mono text-xs px-3.5 py-2 rounded-full border border-mist text-slate/70">Tailwind CSS</span>
+          <span class="font-mono text-xs px-3.5 py-2 rounded-full border border-mist text-slate/70">PostgreSQL</span>
+          <span class="font-mono text-xs px-3.5 py-2 rounded-full border border-mist text-slate/70">Prisma</span>
+          <span class="font-mono text-xs px-3.5 py-2 rounded-full border border-mist text-slate/70">Azure</span>
+          <span class="font-mono text-xs px-3.5 py-2 rounded-full border border-mist text-slate/70">GitHub Actions</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ FINAL CTA ============ -->
+    <section id="contact" class="relative overflow-hidden bg-ink text-paper">
+      <div class="absolute inset-0 blueprint-grid opacity-40" aria-hidden="true"></div>
+      <div class="relative max-w-6xl mx-auto px-6 py-24 text-center">
+        <p class="font-mono text-xs tracking-[0.2em] text-blueprint-light uppercase mb-4">Let's talk</p>
+        <h2 class="font-display font-semibold text-3xl md:text-4xl max-w-xl mx-auto leading-tight">
+          Have a business that needs a working website?
+        </h2>
+        <p class="mt-4 text-paper/65 max-w-md mx-auto">
+          Tell us what your business does and what you need the site to handle. We'll reply with next steps, not a sales pitch.
+        </p>
+        <a href="mailto:hello@websitebydesign.co.za"
+           class="mt-9 inline-flex items-center justify-center rounded-full bg-blueprint text-paper text-sm font-medium px-8 py-3.5 hover:bg-blueprint-light hover:text-ink transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blueprint-light">
+          Start your project
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- footer -->
+  <footer class="bg-ink text-paper/50 border-t border-paper/10">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div>
+        <p class="font-display font-semibold text-paper">Website by Design</p>
+        <p class="text-xs mt-1">Beautiful. Functional. Built for Business.</p>
+      </div>
+      <p class="text-xs">&copy; 2026 Website by Design. Part of the D10 Solutions Group.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  </script>
+
+</body>
+</html>
