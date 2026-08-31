@@ -5,6 +5,49 @@
    one-off styles. Naming convention: block__element--modifier (light BEM).
    ========================================================================== */
 
+/* ---------- Scroll reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.value-grid .value-card.reveal:nth-child(1) { transition-delay: 0ms; }
+.value-grid .value-card.reveal:nth-child(2) { transition-delay: 80ms; }
+.value-grid .value-card.reveal:nth-child(3) { transition-delay: 160ms; }
+.value-grid .value-card.reveal:nth-child(4) { transition-delay: 240ms; }
+
+.card-grid .service-card.reveal:nth-child(1),
+.card-grid .work-card.reveal:nth-child(1) { transition-delay: 0ms; }
+.card-grid .service-card.reveal:nth-child(2),
+.card-grid .work-card.reveal:nth-child(2) { transition-delay: 90ms; }
+.card-grid .service-card.reveal:nth-child(3),
+.card-grid .work-card.reveal:nth-child(3) { transition-delay: 180ms; }
+.card-grid .service-card.reveal:nth-child(4) { transition-delay: 270ms; }
+.card-grid .service-card.reveal:nth-child(5) { transition-delay: 360ms; }
+.card-grid .service-card.reveal:nth-child(6) { transition-delay: 450ms; }
+
+.process-list li.reveal:nth-child(1) { transition-delay: 0ms; }
+.process-list li.reveal:nth-child(2) { transition-delay: 70ms; }
+.process-list li.reveal:nth-child(3) { transition-delay: 140ms; }
+.process-list li.reveal:nth-child(4) { transition-delay: 210ms; }
+.process-list li.reveal:nth-child(5) { transition-delay: 280ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
 /* ---------- Layout helpers ---------- */
 
 .container {
@@ -189,12 +232,14 @@
 
 .hero__grid {
   position: absolute;
-  inset: 0;
+  inset: -20px;
   opacity: 0.6;
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 40px 40px;
+  transition: transform 200ms var(--ease-out);
+  will-change: transform;
 }
 
 .hero__grid--faint {
@@ -295,6 +340,20 @@
 .value-card {
   background-color: var(--color-paper);
   padding: var(--space-7);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.value-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 1;
+}
+
+.value-card__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-blueprint);
+  margin-bottom: var(--space-4);
 }
 
 .value-card__index {
@@ -334,10 +393,18 @@
   border-radius: var(--radius-md);
   border: 1px solid rgba(245, 244, 240, 0.1);
   padding: var(--space-7);
-  transition: border-color var(--transition-base);
+  transition: border-color var(--transition-base), transform var(--transition-base);
 }
 .service-card:hover {
   border-color: rgba(140, 160, 255, 0.5);
+  transform: translateY(-3px);
+}
+
+.service-card__icon {
+  width: 26px;
+  height: 26px;
+  color: var(--color-blueprint-light);
+  margin-bottom: var(--space-4);
 }
 
 .service-card__title {
@@ -358,6 +425,11 @@
   border-radius: var(--radius-md);
   border: 1px solid var(--color-mist);
   overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.work-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .work-card__image {
@@ -422,6 +494,92 @@
   font-size: var(--text-sm);
   color: rgba(43, 46, 51, 0.7);
   line-height: var(--leading-relaxed);
+}
+
+
+/* ---------- Game: Deploy Dash ---------- */
+
+.game-section {
+  background-color: var(--color-ink);
+  color: var(--color-text-on-ink);
+}
+
+.game-intro {
+  max-width: 34rem;
+  margin-bottom: var(--space-10);
+}
+
+.game-panel {
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(140, 160, 255, 0.25);
+  background-color: var(--color-ink-soft);
+  overflow: hidden;
+}
+
+.game-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid rgba(245, 244, 240, 0.08);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: rgba(245, 244, 240, 0.6);
+}
+
+.game-hud__score {
+  color: var(--color-blueprint-light);
+}
+
+.game-canvas-wrap {
+  position: relative;
+  line-height: 0;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: var(--color-ink);
+  cursor: pointer;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  text-align: center;
+  padding: var(--space-6);
+  background: rgba(18, 21, 26, 0.82);
+  backdrop-filter: blur(2px);
+}
+
+.game-overlay__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-lg);
+}
+
+.game-overlay__hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: rgba(245, 244, 240, 0.55);
+}
+
+.game-overlay.u-hidden {
+  display: none;
+}
+
+.game-footnote {
+  margin-top: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: rgba(245, 244, 240, 0.4);
 }
 
 
