@@ -46,7 +46,7 @@
         <a href="#services" class="nav__link">Services</a>
         <a href="#work" class="nav__link">Our Work</a>
         <a href="#process" class="nav__link">Process</a>
-        <a href="#play" class="nav__link">Play</a>
+        <a href="#play" class="nav__link nav__link--play">Play</a>
         <a href="#contact" class="nav__link">Contact</a>
         <a href="#contact" class="btn btn--dark">Start a project</a>
       </nav>
@@ -66,7 +66,7 @@
         <a href="#services" class="nav__link">Services</a>
         <a href="#work" class="nav__link">Our Work</a>
         <a href="#process" class="nav__link">Process</a>
-        <a href="#play" class="nav__link">Play</a>
+        <a href="#play" class="nav__link nav__link--play">Play</a>
         <a href="#contact" class="btn btn--dark text-center">Start a project</a>
       </div>
     </div>
@@ -77,7 +77,11 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
       <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__floaters" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
       <div class="hero__fade" aria-hidden="true"></div>
 
       <div class="hero__annotation" aria-hidden="true">
@@ -121,25 +125,25 @@
 
         <div class="value-grid">
           <div class="value-card reveal">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke-linejoin="round"/></svg>
+            <span class="icon-badge icon-badge--blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke-linejoin="round"/></svg></span>
             <p class="value-card__index">01</p>
             <h3 class="value-card__title">Live in weeks</h3>
             <p class="value-card__body">Most business sites launch in 2–4 weeks, not months of back-and-forth.</p>
           </div>
           <div class="value-card reveal">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 12c2.5 0 4.5-2 4.5-4.5S14.5 3 12 3 7.5 5 7.5 7.5 9.5 12 12 12Zm0 0c-4 0-7 2-7 5v2h14v-2c0-3-3-5-7-5Z" stroke-linejoin="round"/></svg>
+            <span class="icon-badge icon-badge--coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 12c2.5 0 4.5-2 4.5-4.5S14.5 3 12 3 7.5 5 7.5 7.5 9.5 12 12 12Zm0 0c-4 0-7 2-7 5v2h14v-2c0-3-3-5-7-5Z" stroke-linejoin="round"/></svg></span>
             <p class="value-card__index">02</p>
             <h3 class="value-card__title">One point of contact</h3>
             <p class="value-card__body">You deal directly with the person who builds and maintains your site.</p>
           </div>
           <div class="value-card reveal">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4l8 8-8 8-8-8Z" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <span class="icon-badge icon-badge--mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4l8 8-8 8-8-8Z" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg></span>
             <p class="value-card__index">03</p>
             <h3 class="value-card__title">Priced for SMBs</h3>
             <p class="value-card__body">Scoped for small and growing businesses, not enterprise budgets.</p>
           </div>
           <div class="value-card reveal">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10m6 10V4m6 16v-7" stroke-linecap="round"/></svg>
+            <span class="icon-badge icon-badge--signal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10m6 10V4m6 16v-7" stroke-linecap="round"/></svg></span>
             <p class="value-card__index">04</p>
             <h3 class="value-card__title">Room to grow</h3>
             <p class="value-card__body">Start with a site, add bookings, payments, or a portal when you're ready.</p>
@@ -159,32 +163,32 @@
 
         <div class="card-grid card-grid--3">
           <article class="service-card reveal">
-            <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18" stroke-linecap="round"/></svg>
+            <span class="icon-badge icon-badge--blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18" stroke-linecap="round"/></svg></span>
             <h3 class="service-card__title">Business Websites</h3>
             <p class="service-card__body">A site that explains what you do and makes it easy to get in touch — built to be edited without calling us every time.</p>
           </article>
           <article class="service-card reveal">
-            <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke-linecap="round"/></svg>
+            <span class="icon-badge icon-badge--coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke-linecap="round"/></svg></span>
             <h3 class="service-card__title">Landing Pages</h3>
             <p class="service-card__body">One page, one goal — for a campaign, a launch, or a service you want to promote on its own.</p>
           </article>
           <article class="service-card reveal">
-            <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"/><path d="M3 4h2l2 11h11l2-8H6.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="icon-badge icon-badge--mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"/><path d="M3 4h2l2 11h11l2-8H6.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <h3 class="service-card__title">Online Stores</h3>
             <p class="service-card__body">Sell online with a store that handles stock, payments, and orders without needing a developer to run it.</p>
           </article>
           <article class="service-card reveal">
-            <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke-linecap="round"/></svg>
+            <span class="icon-badge icon-badge--signal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke-linecap="round"/></svg></span>
             <h3 class="service-card__title">Booking Systems</h3>
             <p class="service-card__body">Let customers book appointments or services themselves, with a calendar you control from the back end.</p>
           </article>
           <article class="service-card reveal">
-            <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke-linecap="round"/></svg>
+            <span class="icon-badge icon-badge--blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke-linecap="round"/></svg></span>
             <h3 class="service-card__title">Client Portals</h3>
             <p class="service-card__body">A private, secure login where your customers can see documents, status, or account details.</p>
           </article>
           <article class="service-card reveal">
-            <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z" stroke-linejoin="round"/></svg>
+            <span class="icon-badge icon-badge--coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z" stroke-linejoin="round"/></svg></span>
             <h3 class="service-card__title">Care Plans</h3>
             <p class="service-card__body">Hosting, security updates, small edits, and uptime monitoring — so the site keeps working after launch.</p>
           </article>
